@@ -1,7 +1,6 @@
 .card {
     width: 100%;
     margin: auto;
-    background-color: $very-dark-grayish-blue;
 
     border: 1px solid black;
 
@@ -17,6 +16,10 @@
         .content-top, .content-middle, .content-bottom {
             flex: auto;
             border: 2px solid green;
+        }
+
+        .content-middle, .content-bottom {
+            font-weight: 600;
         }
 
         .content-top {
@@ -47,7 +50,6 @@
         .content-middle {
             color: $white;
             font-size: 1.5em;
-            font-weight: 600;
 
             margin-block: 1em;
         }
@@ -58,3 +60,45 @@
         }
     }
 }
+
+@mixin card-modifier(
+    $id, $background-color, 
+    $border-color, 
+    $top-bottom-color: $light-grayish-blue, 
+    $middle-color: $white
+    )
+{
+    #{$id} {
+        background-color: $background-color;
+
+        .content-top {
+            .photo {
+                border: 2px solid $border-color;
+            }
+
+            .info {
+                .name {
+                    color: $top-bottom-color;
+                }
+
+                .verified {
+                    color: hsl-with-opacity($top-bottom-color, 0.5);
+                }
+            }
+        }
+
+        .content-middle {
+            color: $middle-color;
+        }
+
+        .content-bottom {
+            color: hsl-with-opacity($top-bottom-color, 0.7);
+        }
+    }
+}
+
+@include card-modifier("#daniel", $moderate-violet, #a376ed);
+@include card-modifier("#jonathan", $very-dark-grayish-blue, $light-gray);
+@include card-modifier("#jeanette", $white, $white, $very-dark-grayish-blue, $very-dark-blackish-blue);
+@include card-modifier("#patrick", $very-dark-blackish-blue, $moderate-violet);
+@include card-modifier("#kira", $white, $white, $very-dark-grayish-blue, $very-dark-blackish-blue);
