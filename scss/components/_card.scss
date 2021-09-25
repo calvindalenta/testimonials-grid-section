@@ -1,0 +1,47 @@
+.card {
+    width: 100%;
+    background-color: $very-dark-grayish-blue;
+
+    border: 1px solid black;
+
+    .card-content {
+        margin: 5%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        border: 2px solid red;
+
+        .content-top, .content-middle, .content-bottom {
+            flex: auto;
+            border: 2px solid green;
+        }
+
+        .content-top {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+
+            .photo {
+                border: 2px solid green;
+                flex: 0 0 2.5em;
+
+                &, img {
+                    border-radius: 50%;
+                }
+            }
+
+            .info {
+                .name {
+                    color: $light-grayish-blue;
+                }
+
+                .verified {
+                    color: hsl-with-opacity($light-grayish-blue, 0.5);
+                }
+            }
+        }
+        
+    }
+}
