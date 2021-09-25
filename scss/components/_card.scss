@@ -52,6 +52,16 @@
     }
 }
 
+#daniel {
+    background-image: url(images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat ;
+    background-position: top 0px right 2em;
+
+    @include bigger-than-1024px {
+        background-position: top 0px right 20%;
+    }
+}
+
 @mixin card-modifier(
     $id, $background-color, 
     $border-color, 
