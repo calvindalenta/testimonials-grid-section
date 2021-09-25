@@ -6,5 +6,35 @@
     margin-inline: 5%;
     margin-block: 20%;
 
-    // border: 2px solid blue;
+    border: 2px solid blue;
+
+    @include bigger-than-1024px {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        // gap: 0;
+
+        #daniel {
+            height: 100%;
+            grid-column: 1 / span 2;
+        }
+
+        #jonathan {
+            height: 100%;
+        }
+
+        #jeanette {
+            height: 100%;
+            grid-row: 2;
+        }
+
+        #patrick {
+            height: 100%;
+            grid-row: 2;
+            grid-column: 2 / span 2;
+        }
+
+        #kira {
+            height: 100%;
+            grid-row: 1 / span 2;
+        }
+    }
 }
